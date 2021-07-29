@@ -47,14 +47,18 @@ public class Patient{
   }
 
   //get
-  public String getEmail(){
-    return this.email;
+  public String getAddress(){
+    return this.address;
   }
 
   //PhoneNumber
   //set
   public void setPhoneNumber(String phoneNumber){
-    this.phoneNumber = phoneNumber;
+    if(phoneNumber.length() > 8){
+      System.out.println("El Numero de Telefono no debe ser mayor a 8 digitos");
+    }else if(phoneNumber.length() == 8){
+      this.phoneNumber = phoneNumber;
+    }
   }
 
   //get
@@ -91,7 +95,7 @@ public class Patient{
   }
 
   //get
-  public double getHeight(){
+  public String getHeight(){
     return this.height + "metros";
   }
 
