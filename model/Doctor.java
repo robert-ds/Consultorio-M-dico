@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,13 +9,13 @@ public class Doctor extends User{
   private String speciality;
 
   //Método constructor
-  Doctor(String name, String email){
+  public Doctor(String name, String email){
     super(name,email);
     System.out.println("Construyendo el Objeto Doctor");
   }
   
   //Sobrecarga del método constructor Doctor
-  Doctor(String name, String email, String speciality ){
+  public Doctor(String name, String email, String speciality ){
     super(name,email);
     System.out.println("El nombre del médico asignado es: " + name);
     id++;
@@ -46,7 +48,7 @@ public class Doctor extends User{
   //Sobrecarga del Método toString
   @Override
   public String toString(){
-    return super.toString() + "\nSpeciality: " speciality + "\nAvailable:" + availableAppointments;
+    return super.toString() + "\nSpeciality: " + speciality + "\nAvailable:" + availableAppointments;
   }
 
 

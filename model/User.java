@@ -1,3 +1,5 @@
+package model;
+
 //Clase Padre con Atributos, para la clase Doctor y patient
 public class User{
 
