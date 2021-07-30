@@ -11,23 +11,16 @@ public class Main{
     myDoctor.addAvailableAppointment(new Date(), "10:00 am");
     myDoctor.addAvailableAppointment(new Date(), "1:00 pm");
 
-    System.out.println(myDoctor.getAvailableAppointments());
+    System.out.println(myDoctor);
 
-    for(Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()){
+    /* for(Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()){
 
       System.out.println(aA.getDate() + " " + aA.getTime());
 
-    }
+    } */
 
-   /*  Patient patient = new Patient("Alejandra", "ale@gmail.om");
+    Patient patient = new Patient("Alejandra", "ale@gmail.om");
 
-    patient.setWeight(55);
-    System.out.println(patient.getWeight());
-
-    patient.setPhoneNumber("87654321");
-    System.out.println(patient.getPhoneNumber()); */
-
-
+    System.out.println(patient); 
   }
-  
 }

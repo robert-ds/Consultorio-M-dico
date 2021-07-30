@@ -1,71 +1,15 @@
-public class Patient{
+public class Patient extends User{
   //Atributos
-  int id;
-  private String name;
-  private String email;
-  private String address;
-  private String phoneNumber;
   private String birthday;
   private double weight;
   private double height;
   private String blood;
 
   Patient(String name, String email){
-    this.name = name;
-    this.email = email;
-    this.weight = 54.6;
+    super(name, email);
   }
 
   //Getter and Setters
-
-  //Id
-  //set
-  public void setId(int id){
-    this.id = id;
-  }
-
-  //get
-  public int getId(){
-    return this.id;
-  }
-
-  //Email
-  //set
-  public void setEmail(String email){
-    this.email = email;
-  }
-
-  //get
-  public String getEmail(){
-    return this.email;
-  }
-
-  //Address
-  //set
-  public void setAddress(String address){
-    this.address = address;
-  }
-
-  //get
-  public String getAddress(){
-    return this.address;
-  }
-
-  //PhoneNumber
-  //set
-  public void setPhoneNumber(String phoneNumber){
-    if(phoneNumber.length() > 8){
-      System.out.println("El Numero de Telefono no debe ser mayor a 8 digitos");
-    }else if(phoneNumber.length() == 8){
-      this.phoneNumber = phoneNumber;
-    }
-  }
-
-  //get
-  public String getPhoneNumber(){
-    return this.phoneNumber;
-  }
-
   //Birhtday
   //set
   public void setBirthday(String birthday){
@@ -108,6 +52,12 @@ public class Patient{
   //get
   public String getBlood(){
     return this.blood;
+  }
+
+  //Sobreescribiendo el Método toString
+  @Override
+  public String toString(){
+    return super.toString() + "\nAge: "+birthday+ "\nWeight: " +getWeight()+ "\nHeight: "+getHeight()+ "\nBlood: "+ blood;
   }
 
 }

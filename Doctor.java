@@ -1,69 +1,37 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor{
+public class Doctor extends User{
+  
   //Atributos
-  static int id = 0;//Autoincrementado
-  private String name;
-  private String email;
   private String speciality;
 
   //Método constructor
-  Doctor(){
+  Doctor(String name, String email){
+    super(name,email);
     System.out.println("Construyendo el Objeto Doctor");
   }
   
   //Sobrecarga del método constructor Doctor
-  Doctor(String name, String speciality ){
+  Doctor(String name, String email, String speciality ){
+    super(name,email);
     System.out.println("El nombre del médico asignado es: " + name);
     id++;
-    this.name = name;
     this.speciality = speciality; 
   }
   
   //Comportamientos o Métodos
-  public void showName(){
-    System.out.println(name);
+  //collección
+  ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+  public void addAvailableAppointment(Date date, String time){
+     availableAppointments.add(new Doctor.AvailableAppointment(date, time));
   }
 
-  public void showId(){
-    System.out.println("Id Doctor: " + id);
+  public ArrayList<AvailableAppointment> getAvailableAppointments(){
+    return availableAppointments;
   }
 
   //Getters and Setters
-  //Id
-  //Set
-  public void setId(int id){
-    this.id = id;
-  }
-
-  //Get
-  public int getId(){
-    return this.id;
-  }
-
-  //name
-  //Set
-  public void setName(String name){
-    this.name = name;
-  }
-
-  //Get
-  public String getName(){
-    return this.name;
-  }
-
-  //Email
-  //Set
-  public void setEmail(String email){
-    this.email = email;
-  }
-
-  //Get
-  public String getEmail(){
-    return this.email;
-  }
-
   //Speciality
   //Set
   public void setSpeciality(String speciality){
@@ -75,14 +43,12 @@ public class Doctor{
     return this.speciality;
   }
 
-  ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-  public void addAvailableAppointment(Date date, String time){
-     availableAppointments.add(new Doctor.AvailableAppointment(date, time));
+  //Sobrecarga del Método toString
+  @Override
+  public String toString(){
+    return super.toString() + "\nSpeciality: " speciality + "\nAvailable:" + availableAppointments;
   }
 
-  public ArrayList<AvailableAppointment> getAvailableAppointments(){
-    return availableAppointments;
-  }
 
   //Clase interna para gestionar las citas
   public static class AvailableAppointment{
@@ -130,6 +96,13 @@ public class Doctor{
     //Get
     public String getTime(){
       return this.time;
+    }
+
+    //Sobrecarga del Método toString
+    @Override
+    public String toString(){
+      return "Available Appoiments \nDate: "+date+"\nTime: "+ 
+      time;
     }
 
   }
