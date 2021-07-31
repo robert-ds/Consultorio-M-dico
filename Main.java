@@ -19,6 +19,20 @@ public class Main{
     User userPa = new Patient("Pedro","mill@gmail.com");
     userPa.showDataUser();
 
+    //Clase Anónima User
+    User user1 = new User("Vasquez", "vasquez@gmail.com"){
+      
+      //Métoo Anónimo
+      @Override
+      public void showDataUser(){
+        System.out.println("Doctor\n");
+        System.out.println("Hospital: Cruz Verde\n");
+        System.out.println("Departamento: Geriatria");
+      }
+    };
+
+    user1.showDataUser();
+
     /* for(Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()){
 
       System.out.println(aA.getDate() + " " + aA.getTime());
