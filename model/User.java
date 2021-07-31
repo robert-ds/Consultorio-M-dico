@@ -1,7 +1,7 @@
 package model;
 
 //Clase Padre con Atributos, para la clase Doctor y patient
-public class User{
+public abstract class User{
 
   static int id = 0;//Autoincrementado
   public String name;
@@ -80,6 +80,7 @@ public class User{
     return "User: " +name+ ", Email: "+email+ "\nAddress: " +address+ " Phone: "+phoneNumber;
   }
 
-
+  //Signature del método abstracto
+  public abstract void showDataUser();
 
 }

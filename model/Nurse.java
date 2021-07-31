@@ -9,6 +9,13 @@ public class Nuser extends User{
     super(name, email);
   }
 
+  //Implementando el Metodo Abstracto de la Clase User
+  @Override
+  public void showDataUser(){
+    System.out.println("Empleado del Hospital: Cruz Verde");
+    System.out.println("Departamentos: Nutriología, Cardilogía, Pediatría");
+  }
+
   //Getters y Setters
   //Speciality
   //Set

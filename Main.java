@@ -14,14 +14,20 @@ public class Main{
 
     System.out.println(myDoctor);
 
+    User user = new Doctor("Robert","andres@gmail.com");
+    user.showDataUser();
+    User userPa = new Patient("Pedro","mill@gmail.com");
+    userPa.showDataUser();
+
     /* for(Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()){
 
       System.out.println(aA.getDate() + " " + aA.getTime());
 
-    } */
+    } 
 
     Patient patient = new Patient("Alejandra", "ale@gmail.om");
 
     System.out.println(patient); 
+    */
   }
 }

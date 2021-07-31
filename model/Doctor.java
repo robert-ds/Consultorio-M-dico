@@ -51,6 +51,12 @@ public class Doctor extends User{
     return super.toString() + "\nSpeciality: " + speciality + "\nAvailable:" + availableAppointments;
   }
 
+  //Implamentando el Método Abstracto de la clase User
+  @Override
+  public void showDataUser(){
+    System.out.println("Empleado del Hospital: Cruz Roja");
+    System.out.println("Departamento: Oncologia");
+  }
 
   //Clase interna para gestionar las citas
   public static class AvailableAppointment{

@@ -11,6 +11,13 @@ public class Patient extends User{
     super(name, email);
   }
 
+  //Implementando el Método Abstracto de la Clase user
+  @Override
+  public void showDataUser(){
+    System.out.println("Paciente");
+    System.out.println("Historial Completo Desde el Nacimiento");
+  }
+
   //Getter and Setters
   //Birhtday
   //set
