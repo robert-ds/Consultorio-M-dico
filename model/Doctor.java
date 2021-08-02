@@ -10,6 +10,7 @@ public class Doctor extends User{
   
   //Atributos
   private String speciality;
+  private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
   //Método constructor
   public Doctor(String name, String email){
@@ -23,7 +24,6 @@ public class Doctor extends User{
   
   //Comportamientos o Métodos
   //collección
-  ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
   public void addAvailableAppointment(String date, String time){
      availableAppointments.add(new Doctor.AvailableAppointment(date, time));
   }
@@ -95,11 +95,11 @@ public class Doctor extends User{
     }
 
     //Get
-    public Date getDate(){
+    public Date getDate(String DATE){
       return this.date;
     }
     
-    public String getDate(String DATE){
+    public String getDate(){
       return format.format(date);
     }
 
