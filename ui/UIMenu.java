@@ -3,6 +3,8 @@ package ui;
 import model.Doctor;
 import model.Patient;
 
+import ui.UIDoctorMenu.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,12 +31,12 @@ public class UIMenu{
       switch (response) {
         case 1:
           System.out.println("Doctor");
-          response = 0;
+          //response = 0;
           authUser(1);
           break;
         
         case 2:
-          response = 0;
+          //response = 0;
           authUser(2);
           break;
 
@@ -61,9 +63,9 @@ public class UIMenu{
     doctors.add(new Doctor("Jose Gregorio", "jose@gmail.com"));
 
     ArrayList<Patient> patients = new ArrayList<>();
-    patients.add(new Patient("Maria Camacho", "maria@gmail.com",));
-    patients.add(new Patient("Julio Rodriguez", "julio@gmail.com",));
-    patients.add(new Patient("Agatha Mill", "agatha@gmail.com",));
+    patients.add(new Patient("Maria Camacho", "maria@gmail.com"));
+    patients.add(new Patient("Julio Rodriguez", "julio@gmail.com"));
+    patients.add(new Patient("Agatha Mill", "agatha@gmail.com"));
 
     boolean emailCorrect = false;
 
@@ -73,15 +75,15 @@ public class UIMenu{
       String email = sc.nextLine();
 
       if(userType == 1){
-        for(Doctor d: dosctors){
+        for(Doctor d: doctors){
           if(d.getEmail().equals(email)){
             emailCorrect = true;
             //Obtener el usuario logeado
             doctorLogged = d;
-            //showDoctorMen
+           UIDoctorMenu.showDoctorMenu();
           }
         }
-      }else if(){
+      }else if(userType == 2){
         for(Patient p: patients){
           if(p.getEmail().equals(email)){
             emailCorrect = true;

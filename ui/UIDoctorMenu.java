@@ -1,6 +1,15 @@
 package ui;
 
+import model.Doctor;
+import model.Patient;
+
+import ui.UIMenu.*;
+
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Date;
+import java.time.*;
+import java.text.SimpleDateFormat; 
 
 public class UIDoctorMenu{
 
@@ -23,6 +32,7 @@ public class UIDoctorMenu{
       switch(response){
         
         case 1:
+          showAddAvailableAppointmentsMenu();
           break;
 
         case 2:
@@ -49,7 +59,7 @@ public class UIDoctorMenu{
       System.out.println(":: Select a Months");
 
       for(int i = 0; i < 3; i++){
-        int i = i + 1;
+        int j = i + 1;
         System.out.println(j + "." + UIMenu.MONTHS[i]);
       }
 
@@ -60,7 +70,7 @@ public class UIDoctorMenu{
 
       if(response > 0 && response < 4){
         int monthSelected = response;
-        System.out.println(monthSelected + " . " + UIMenu.MONTHS[monthSelected]);
+        System.out.println(monthSelected + " . " + UIMenu.MONTHS[monthSelected-1]);
 
         System.out.println("Insert the date Available: [dd/mm/yy]");
         String date = sc.nextLine();
@@ -72,16 +82,16 @@ public class UIDoctorMenu{
         if(responseDate == 2) continue;
 
         int responseTime = 0;
-        String time = "" 
+        String time = ""; 
         do{
-          System.out.println("Insert the time available for date: "+ date "[16:00]");
+          System.out.println("Insert the time available for date: "+ date + "[16:00]");
           time = sc.nextLine();
           System.out.println("Your time is: " + time + "\n1. Correct \n2. Change Time");
           responseTime = Integer.valueOf(sc.nextLine());
         }while(responseTime == 2);
 
-        UIMenu.doctorLogged.showAddAvailableAppointmentsMenu(date,time);
-
+        UIMenu.doctorLogged.addAvailableAppointment(date,time);
+        
         checkDoctorAvailableAppointments(UIMenu.doctorLogged);
 
       }else if(response == 0){

@@ -2,7 +2,9 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.SimpleDateFormat;
+import java.time.*;
+import java.text.SimpleDateFormat; 
+import java.text.ParseException; 
 
 public class Doctor extends User{
   
@@ -12,15 +14,11 @@ public class Doctor extends User{
   //Método constructor
   public Doctor(String name, String email){
     super(name,email);
-    System.out.println("Construyendo el Objeto Doctor");
   }
   
   //Sobrecarga del método constructor Doctor
   public Doctor(String name, String email, String speciality ){
-    super(name,email);
-    System.out.println("El nombre del médico asignado es: " + name);
-    id++;
-    this.speciality = speciality; 
+    super(name,email); 
   }
   
   //Comportamientos o Métodos
