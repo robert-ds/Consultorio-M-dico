@@ -1,5 +1,8 @@
 package model;
 
+import model.Doctor;
+import model.Patient;
+
 import java.util.Date;
 
 public class AppointmentDoctor implements ISchedulable{
@@ -9,6 +12,10 @@ public class AppointmentDoctor implements ISchedulable{
   private Date date;
   private String time;
 
+  public AppointmentDoctor(Patient patient, Doctor doctor){
+    this.patient = patient;
+    this.doctor = doctor;
+  }
 
   //Getters y Setters
   //Id
@@ -63,12 +70,13 @@ public class AppointmentDoctor implements ISchedulable{
 
   //Get
   public String getTime(){
-    return this.time;
+    return this.time + "horas";
   }
 
   //Implementado Metodo de la interfaz ISchedulable
   @Override
   public void schedule(Date date, String time){
-
+    this.date = date;
+    this.time = time;
   }
 }

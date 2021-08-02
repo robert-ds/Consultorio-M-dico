@@ -87,7 +87,7 @@ public class UIMenu{
         for(Patient p: patients){
           if(p.getEmail().equals(email)){
             emailCorrect = true;
-            patientLogget = p;
+            patientLogged = p;
           }
         }
       }      

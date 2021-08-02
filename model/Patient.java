@@ -1,11 +1,39 @@
 package model;
 
+import model.Doctor;
+
+import java.util.*;
+
 public class Patient extends User{
   //Atributos
   private String birthday;
   private double weight;
   private double height;
   private String blood;
+
+  private ArrayList<AppointmentDoctor> appointmentDoctors = new ArrayList<>();
+  private ArrayList<AppointmentNurse> appointmentNurses =
+  new ArrayList<>();
+
+  //Getters y Setters
+  //AppointmentDoctor
+  //Set
+  public void addAppointmentDoctors(Doctor doctor, Date date, String time){
+    AppointmentDoctor appointmentDoctor = new AppointmentDoctor(this, doctor);
+    appointmentDoctor.schedule(date,time);
+    appointmentDoctors.add(appointmentDoctor);
+  }
+
+  //Get
+  public ArrayList<AppointmentDoctor> getAppointmentDoctors(){
+    return appointmentDoctors;
+  }
+
+  //AppointmentNurse
+  //Set
+  public void setAppointmentNurse(ArrayList<AppointmentNurse> appointmentNurses){
+    this.appointmentNurses 0 appointmentNurses;
+  }
 
   public Patient(String name, String email){
     super(name, email);
