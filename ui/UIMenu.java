@@ -4,6 +4,7 @@ import model.Doctor;
 import model.Patient;
 
 import ui.UIDoctorMenu.*;
+import ui.UIPatientMenu.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class UIMenu{
   public static final String[] MONTHS = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
   public static Doctor doctorLogged;
-  public static Patient patientLogget;
+  public static Patient patientLogged;
 
   public static void showMenu(){
     System.out.println("Welcome to My Appointments");
@@ -88,6 +89,7 @@ public class UIMenu{
           if(p.getEmail().equals(email)){
             emailCorrect = true;
             patientLogged = p;
+            UIPatientMenu.showPatientMenu();
           }
         }
       }      

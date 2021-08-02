@@ -65,7 +65,7 @@ public class AppointmentDoctor implements ISchedulable{
   //Time
   //Set
   public void setTime(){
-    public this.time = time;
+    this.time = time;
   }
 
   //Get
